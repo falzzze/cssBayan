@@ -36,7 +36,7 @@ p {
   cursor: pointer;
 }
 
-.tab-check {
+.tab-checkbox {
   width: 0;
   height: 0;
   appearance: none;
@@ -44,7 +44,7 @@ p {
   position: absolute;
 }
 
-.tab-check:checked ~ .tab-img {
+.tab-checkbox:checked ~ .tab-img {
   display: none;
 }
 
@@ -53,7 +53,7 @@ p {
   padding: 10px 15px;
 }
 
-.cats {
+.phones {
   height: 200px;
   width: 200px;
   position: absolute;
