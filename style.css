@@ -12,9 +12,8 @@ body {
 
 .base {
   font-size: 25px;
-  max-width: 1500px;
-  margin: auto;
-  margin-top: 50px;
+  max-width: 500px;
+  margin: 50px auto 0;
 }
 
 p {
@@ -25,15 +24,29 @@ p {
 /* tab */
 
 .tab {
-  max-width: 1500px;
+  max-width: 500px;
   margin: 20px auto;
 }
 
 .tab-head {
   display: block;
+  position: relative;
   font-size: 20px;
   padding-top: 0px;
   cursor: pointer;
+}
+
+.tab-head:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 25%;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 5px 0 5px;
+  border-color: blue transparent transparent transparent;
 }
 
 .tab-checkbox {
@@ -44,20 +57,30 @@ p {
   position: absolute;
 }
 
-.tab-checkbox:checked ~ .tab-img {
-  display: none;
-}
-
 .tab-img {
-  display: block;
+  display: none;
   padding: 10px 15px;
 }
 
+.tab-checkbox:checked ~ .tab-img {
+  display: block;
+}
+
+.tab-checkbox:hover ~ .tab-img {
+  display: block;
+  transition: .2s ease;
+}
+
+.tab-checkbox:checked ~ .tab-head:after {
+  border-style: solid;
+  border-width: 0 5px 8px 5px;
+  border-color: transparent transparent blue transparent;
+}
+
 .phones {
-  height: 200px;
-  width: 200px;
-  position: absolute;
-  top: 27%;
-  left: 25%;
-  transform: translate(-50%, -50%);
+  height: 300px;
+}
+
+.tab-head:hover {
+  color:blue;
 }
